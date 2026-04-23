@@ -78,17 +78,25 @@ export default function Hero() {
             variants={itemVariants}
             className='flex flex-col sm:flex-row gap-5 justify-center items-center'
           >
-            <motion.button
+            <motion.a
+              href='#packages'
               whileHover={{
                 scale: 1.05,
                 boxShadow: '0 20px 40px -10px rgba(217, 119, 6, 0.3)',
               }}
               whileTap={{ scale: 0.98 }}
-              className='group relative px-10 py-5 bg-[#D97706] text-white rounded-2xl font-black text-lg overflow-hidden'
+              className='group relative inline-flex items-center justify-center px-10 py-5 bg-[#D97706] text-white rounded-2xl font-black text-lg overflow-hidden transition-colors'
             >
-              <span className='relative z-10'>Explore Packages</span>
-              <div className='absolute inset-0 bg-white/20 translate-x-[-100%] group-hover:translate-x-[100%] transition-transform duration-500 skew-x-[-20deg]' />
-            </motion.button>
+              {/* Shimmer Effect */}
+              <div className='absolute inset-0 bg-white/20 -translate-x-[120%] group-hover:translate-x-[120%] transition-transform duration-700 ease-in-out skew-x-[-25deg]' />
+
+              <span className='relative z-10 flex items-center gap-2'>
+                Explore Packages
+              </span>
+
+              {/* Subtle Background Glow */}
+              <div className='absolute inset-0 opacity-0 group-hover:opacity-100 bg-gradient-to-r from-transparent via-white/10 to-transparent transition-opacity duration-500' />
+            </motion.a>
 
             {/* Updated to anchor link for scrolling */}
             <motion.a

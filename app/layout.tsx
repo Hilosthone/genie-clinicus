@@ -4,18 +4,24 @@ import { Inter, Montserrat } from 'next/font/google'
 import './globals.css'
 import GClogo from '@/src/components/home/images/GClogo.jpeg'
 
-const inter = Inter({ subsets: ['latin'], variable: '--font-inter' })
+const inter = Inter({
+  subsets: ['latin'],
+  variable: '--font-inter',
+  display: 'swap', // Smoother font loading
+})
 
 const montserrat = Montserrat({
   subsets: ['latin'],
   variable: '--font-montserrat',
   weight: ['700', '800', '900'],
+  display: 'swap',
 })
 
 export const viewport: Viewport = {
-  themeColor: '#D97706',
+  themeColor: '#0A0927', // Set this to your background color for seamless status bars
   width: 'device-width',
   initialScale: 1,
+  maximumScale: 1, // Prevents accidental zoom on mobile inputs
 }
 
 export const metadata: Metadata = {
@@ -36,9 +42,10 @@ export const metadata: Metadata = {
     'Graduation',
   ],
   authors: [{ name: 'Genie Clinicus Committee' }],
+  creator: 'Genie Clinicus Committee',
+  publisher: 'Obafemi Awolowo University',
   metadataBase: new URL('https://genie-clinicus.vercel.app'),
 
-  // Open Graph (WhatsApp, Facebook, LinkedIn)
   openGraph: {
     title: 'Genie Clinicus | The Grand Milestone',
     description:
@@ -47,9 +54,9 @@ export const metadata: Metadata = {
     siteName: 'Genie Clinicus',
     images: [
       {
-        url: GClogo.src, // Accessing the string URL
-        width: 800,
-        height: 800,
+        url: GClogo.src,
+        width: 1200, // Standard OG size
+        height: 630,
         alt: 'Genie Clinicus Official Logo',
       },
     ],
@@ -57,7 +64,6 @@ export const metadata: Metadata = {
     type: 'website',
   },
 
-  // Twitter (X)
   twitter: {
     card: 'summary_large_image',
     title: 'Genie Clinicus | FYB 2025',
@@ -65,12 +71,17 @@ export const metadata: Metadata = {
     images: [GClogo.src],
   },
 
-  // Favicons
   icons: {
-    icon: GClogo.src,
+    icon: [
+      { url: GClogo.src },
+      { url: GClogo.src, sizes: '32x32', type: 'image/jpeg' },
+    ],
     shortcut: GClogo.src,
-    apple: GClogo.src,
+    apple: [{ url: GClogo.src, sizes: '180x180', type: 'image/jpeg' }],
   },
+
+  // Optional: Add this if you create a manifest.json in /public
+  // manifest: '/manifest.json',
 }
 
 export default function RootLayout({

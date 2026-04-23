@@ -1,79 +1,3 @@
-// 'use client'
-// import { motion } from 'framer-motion'
-
-// export default function CTA() {
-//   return (
-//     <section id='packages' className='py-24 px-6 relative overflow-hidden'>
-//       {/* Background Decorative Element */}
-//       <div className='absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-full max-w-4xl aspect-square bg-blue-100/30 blur-[100px] rounded-full -z-10' />
-
-//       <motion.div
-//         initial={{ opacity: 0, scale: 0.95 }}
-//         whileInView={{ opacity: 1, scale: 1 }}
-//         viewport={{ once: true }}
-//         transition={{ duration: 0.8 }}
-//         className='max-w-5xl mx-auto bg-slate-900 rounded-[3rem] p-8 md:p-20 text-center relative overflow-hidden shadow-2xl'
-//       >
-//         {/* Animated Background Pattern */}
-//         <div className='absolute inset-0 opacity-10 pointer-events-none'>
-//           <div className='absolute inset-0 bg-[radial-gradient(circle_at_center,_var(--tw-gradient-stops))] from-blue-400 via-transparent to-transparent' />
-//         </div>
-
-//         <div className='relative z-10'>
-//           <motion.h2
-//             initial={{ y: 20, opacity: 0 }}
-//             whileInView={{ y: 0, opacity: 1 }}
-//             transition={{ delay: 0.2 }}
-//             className='text-3xl md:text-5xl font-bold text-white mb-6 tracking-tight'
-//           >
-//             Ready to secure your <br className='hidden md:block' />
-//             <span className='text-blue-400'>Milestone Package?</span>
-//           </motion.h2>
-
-//           <motion.p
-//             initial={{ y: 20, opacity: 0 }}
-//             whileInView={{ y: 0, opacity: 1 }}
-//             transition={{ delay: 0.3 }}
-//             className='text-slate-400 text-lg mb-10 max-w-xl mx-auto'
-//           >
-//             Whether it&apos;s the all-inclusive #110k experience or the basic
-//             trip, don&apos;t miss out on the final celebration.
-//           </motion.p>
-
-//           <motion.div
-//             initial={{ y: 20, opacity: 0 }}
-//             whileInView={{ y: 0, opacity: 1 }}
-//             transition={{ delay: 0.4 }}
-//             className='flex flex-col sm:flex-row gap-4 justify-center items-center'
-//           >
-//             {/* Main Animated Button */}
-//             <motion.button
-//               whileHover={{ scale: 1.05 }}
-//               whileTap={{ scale: 0.95 }}
-//               className='group relative px-10 py-5 bg-blue-600 text-white rounded-2xl font-bold text-lg overflow-hidden transition-all shadow-[0_0_20px_rgba(37,99,235,0.3)] hover:shadow-[0_0_40px_rgba(37,99,235,0.5)]'
-//             >
-//               <span className='relative z-10'>Get Your Package Now</span>
-//               <motion.div className='absolute inset-0 bg-white/20 translate-x-[-100%] group-hover:translate-x-[100%] transition-transform duration-500 skew-x-[-20deg]' />
-//             </motion.button>
-
-//             <button className='text-white font-semibold hover:text-blue-400 transition-colors p-4'>
-//               View Payment Structure →
-//             </button>
-//           </motion.div>
-//         </div>
-
-//         {/* Footer Trademark inside CTA for authority */}
-//         <div className='mt-16 pt-8 border-t border-white/10 opacity-30'>
-//           <p className='text-xs text-white uppercase tracking-[0.2em]'>
-//             Genie Clinicus FYB Committee Authorized
-//           </p>
-//         </div>
-//       </motion.div>
-//     </section>
-//   )
-// }
-
-
 // src/components/home/CTA.tsx
 'use client'
 import { motion, Variants } from 'framer-motion'
@@ -91,7 +15,7 @@ export default function CTA() {
   }
 
   return (
-    <section id='packages' className='py-24 px-6 relative overflow-hidden bg-[#0A0927]'>
+    <section className='py-24 px-6 relative overflow-hidden bg-[#0A0927]'>
       {/* Background Decorative Gradient */}
       <div className='absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-full max-w-4xl aspect-square bg-[#D97706]/5 blur-[120px] rounded-full -z-10' />
 
