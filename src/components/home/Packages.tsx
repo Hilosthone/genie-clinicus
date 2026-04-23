@@ -32,7 +32,7 @@ const PACKAGES = [
   },
   {
     name: 'Diamond',
-    price: '100,000',
+    price: '110,000', // Updated to 110k
     color: '#7DD3FC',
     icon: Crown,
     features: [
@@ -127,7 +127,6 @@ export default function Packages() {
           ))}
         </div>
 
-        {/* Compressed Extras Bar */}
         <div className='mt-10 bg-white/[0.02] border border-white/5 rounded-2xl p-5'>
           <div className='flex flex-wrap justify-between items-center gap-4'>
             <div className='flex items-center gap-2'>

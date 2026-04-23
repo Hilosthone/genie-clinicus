@@ -44,13 +44,13 @@ export const metadata: Metadata = {
   authors: [{ name: 'Genie Clinicus Committee' }],
   creator: 'Genie Clinicus Committee',
   publisher: 'Obafemi Awolowo University',
-  metadataBase: new URL('https://genie-clinicus.vercel.app'),
+  metadataBase: new URL('https://tinyurl.com/genie-clinicus-fyb'),
 
   openGraph: {
     title: 'Genie Clinicus | The Grand Milestone',
     description:
       'Celebrating the legacy and the journey of our final year in Medical Rehabilitation at OAU.',
-    url: 'https://genie-clinicus.vercel.app',
+    url: 'https://tinyurl.com/genie-clinicus-fyb',
     siteName: 'Genie Clinicus',
     images: [
       {
