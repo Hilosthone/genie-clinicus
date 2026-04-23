@@ -32,18 +32,18 @@ export const metadata: Metadata = {
     'Graduation',
   ],
   authors: [{ name: 'Genie Clinicus Committee' }],
-  metadataBase: new URL('https://genieclinicus.vercel.app'), 
+  metadataBase: new URL('https://genie-clinicus.vercel.app'),
 
   // Open Graph (WhatsApp, Facebook, LinkedIn)
   openGraph: {
     title: 'Genie Clinicus | The Grand Milestone',
     description:
       'Celebrating the legacy and the journey of our final year in Medical Rehabilitation.',
-    url: 'https://genieclinicus.vercel.app',
+    url: 'https://genie-clinicus.vercel.app',
     siteName: 'Genie Clinicus',
     images: [
       {
-        url: '/GClogo.jpeg', 
+        url: '/GClogo.jpeg',
         width: 800,
         height: 800,
         alt: 'Genie Clinicus Official Logo',
