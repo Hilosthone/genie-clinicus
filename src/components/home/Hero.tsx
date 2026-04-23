@@ -29,7 +29,7 @@ export default function Hero() {
   } as const 
 
   return (
-    <section className='relative min-h-screen flex items-center justify-center pt-20 overflow-hidden bg-[#0A0927]'>
+    <section className='relative min-h-screen flex items-center justify-center pt-30 overflow-hidden bg-[#0A0927]'>
       {/* Background Brand Orbs - Refined for professional depth */}
       <div className='absolute top-[-5%] left-[-5%] w-[45%] h-[45%] bg-[#93A5D1]/10 blur-[140px] rounded-full animate-pulse' />
       <div className='absolute bottom-[0%] right-[-5%] w-[40%] h-[40%] bg-[#D97706]/10 blur-[140px] rounded-full' />
