@@ -6,35 +6,91 @@ export const NAV_LINKS = [
   { name: 'FAQ', href: '#faq' },
 ]
 
+// src/constants/index.ts
+
 export const EVENTS = [
   {
-    title: 'Dinner & Awards Night',
-    date: 'May 12, 2026',
-    time: '6:00 PM',
-    location: 'Grand Ballroom, Uni...',
-    description:
-      'An evening of elegance, recognition, and fine dining to celebrate our journey.',
-    type: 'Formal',
+    title: "Class Photoshoot",
+    date: "TBA",
+    time: "8:00 AM",
+    location: "Campus Precincts",
+    description: "Clean fits, clean shots, and lifetime memories. We're starting the celebration strong.",
+    type: "Memories",
+    color: "#93A5D1"
   },
   {
-    title: 'Old School Day',
-    date: 'May 14, 2026',
-    time: '9:00 AM',
-    location: 'Main Campus',
-    description:
-      'Take a trip down memory lane with vintage outfits and classic vibes.',
-    type: 'Themed',
+    title: "Fitness Walk & Mountaineering",
+    date: "TBA",
+    time: "6:30 AM",
+    location: "Sobi Hill / Mountain Trail",
+    description: "Fresh air and team energy. Pushing limits together and taking in the view.",
+    type: "Wellness",
+    color: "#D97706"
   },
   {
-    title: 'Picnic & Games',
-    date: 'May 16, 2026',
-    time: '12:00 PM',
-    location: 'Botanical Garden',
-    description:
-      'Relax, bond, and compete in fun games before the final curtain falls.',
-    type: 'Casual',
+    title: "Amala Day",
+    date: "TBA",
+    time: "2:00 PM",
+    location: "Cultural Center",
+    description: "Proper cultural enjoyment. Good food, heavy vibes, and class bonding over local delicacies.",
+    type: "Social",
+    color: "#D97706"
   },
-]
+  {
+    title: "Outreach & Community Service",
+    date: "TBA",
+    time: "10:00 AM",
+    location: "Junior College Wings",
+    description: "Giving back and sharing love. Mentorship and impact for our junior colleagues.",
+    type: "Impact",
+    color: "#93A5D1"
+  },
+  {
+    title: "Cardio Fest",
+    date: "TBA",
+    time: "8:00 AM",
+    location: "Sports Complex",
+    description: "High energy interhouse sports and competitive fun. Heart-pumping bonding at its best.",
+    type: "Sports",
+    color: "#D97706"
+  },
+  {
+    title: "Academic Conference",
+    date: "TBA",
+    time: "9:00 AM",
+    location: "College Auditorium",
+    description: "Rehabilitation Without Borders: Pathways, Innovations & Global Opportunities.",
+    type: "Professional",
+    color: "#93A5D1"
+  },
+  {
+    title: "Merch Day (Sign-Out Walk)",
+    date: "TBA",
+    time: "12:00 PM",
+    location: "Campus Main Gate",
+    description: "Stepping out in style after exams. Music, pictures, and that pure 'soft life' energy.",
+    type: "Celebration",
+    color: "#D97706"
+  },
+  {
+    title: "Dinner & Awards Night",
+    date: "May 12, 2026",
+    time: "6:00 PM",
+    location: "Grand Ballroom",
+    description: "A classy night of fine dining and recognition as we activate full celebration mode.",
+    type: "Formal",
+    color: "#93A5D1"
+  },
+  {
+    title: "The Grand Trip (Omu Resort)",
+    date: "TBA",
+    time: "7:00 AM",
+    location: "Omu Resort, Lagos",
+    description: "Premium enjoyment. A safe, structured resort experience with games and real bonding.",
+    type: "Adventure",
+    color: "#D97706"
+  }
+];
 
 export const FAQS = [
   {

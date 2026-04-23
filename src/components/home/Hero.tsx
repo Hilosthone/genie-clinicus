@@ -1,46 +1,3 @@
-// 'use client'
-// import { motion } from 'framer-motion'
-
-// export default function Hero() {
-//   return (
-//     <section className='relative min-h-[90vh] flex items-center justify-center pt-20 overflow-hidden bg-[#fafafa]'>
-//       {/* Background Blobs */}
-//       <div className='absolute top-[-10%] left-[-10%] w-[40%] h-[40%] bg-blue-100/50 blur-[120px] rounded-full' />
-//       <div className='absolute bottom-[-10%] right-[-10%] w-[40%] h-[40%] bg-indigo-100/50 blur-[120px] rounded-full' />
-
-//       <div className='container mx-auto px-6 relative z-10 text-center'>
-//         <motion.div
-//           initial={{ opacity: 0, y: 20 }}
-//           animate={{ opacity: 1, y: 0 }}
-//           transition={{ duration: 0.6 }}
-//         >
-//           <span className='px-4 py-1.5 rounded-full bg-white border border-slate-200 text-slate-500 text-sm font-medium mb-6 inline-block shadow-sm'>
-//             Genie Clinicus FYB Committee
-//           </span>
-//           <h1 className='text-5xl md:text-7xl font-black text-slate-900 leading-[1.1] mb-6 tracking-tight'>
-//             The Final Lap. <br />
-//             The <span className='text-blue-600'>Grand Milestone.</span>
-//           </h1>
-//           <p className='max-w-2xl mx-auto text-lg text-slate-600 mb-10 leading-relaxed'>
-//             From the wards to the world. Celebrating years of medical
-//             excellence, friendship, and the triumph of the Genie Clinicus class.
-//           </p>
-
-//           <div className='flex flex-col sm:flex-row gap-4 justify-center'>
-//             <button className='px-8 py-4 bg-slate-900 text-white rounded-2xl font-bold hover:bg-blue-600 transition-all shadow-xl shadow-blue-900/10'>
-//               View All Packages
-//             </button>
-//             <button className='px-8 py-4 bg-white border border-slate-200 text-slate-900 rounded-2xl font-bold hover:bg-slate-50 transition-all'>
-//               Event Schedule
-//             </button>
-//           </div>
-//         </motion.div>
-//       </div>
-//     </section>
-//   )
-// }
-
-
 // src/components/home/Hero.tsx
 'use client'
 import { motion } from 'framer-motion'
@@ -98,7 +55,7 @@ export default function Hero() {
           {/* Main Heading */}
           <motion.h1
             variants={itemVariants}
-            className='text-6xl md:text-8xl font-black text-white leading-[0.95] mb-8 tracking-tighter'
+            className='text-5xl md:text-8xl font-black text-white leading-[0.95] mb-8 tracking-tighter'
           >
             THE FINAL LAP.
             <br />
