@@ -1,6 +1,8 @@
+// src/app/layout.tsx
 import type { Metadata, Viewport } from 'next'
 import { Inter, Montserrat } from 'next/font/google'
 import './globals.css'
+import GClogo from '@/src/components/home/images/GClogo.jpeg'
 
 const inter = Inter({ subsets: ['latin'], variable: '--font-inter' })
 
@@ -10,7 +12,6 @@ const montserrat = Montserrat({
   weight: ['700', '800', '900'],
 })
 
-// Viewport settings for mobile responsiveness and theme color
 export const viewport: Viewport = {
   themeColor: '#D97706',
   width: 'device-width',
@@ -19,16 +20,19 @@ export const viewport: Viewport = {
 
 export const metadata: Metadata = {
   title: {
-    default: 'Genie Clinicus | FYB 2025 Milestone',
+    default: 'Genie Clinicus | OAU Med-Rehab FYB 2025',
     template: '%s | Genie Clinicus',
   },
   description:
-    'The official milestone platform for the Genie Clinicus Final Year Class. Celebrating the journey, the sacrifice, and the medical excellence of the 2025 graduates.',
+    'The official milestone platform for the Genie Clinicus Final Year Class, Dept. of Medical Rehabilitation, Obafemi Awolowo University. Celebrating medical excellence.',
   keywords: [
     'Genie Clinicus',
     'Medical Rehabilitation',
     'FYB 2025',
-    'Unilorin',
+    'OAU',
+    'Obafemi Awolowo University',
+    'Physiotherapy',
+    'Occupational Therapy',
     'Graduation',
   ],
   authors: [{ name: 'Genie Clinicus Committee' }],
@@ -38,12 +42,12 @@ export const metadata: Metadata = {
   openGraph: {
     title: 'Genie Clinicus | The Grand Milestone',
     description:
-      'Celebrating the legacy and the journey of our final year in Medical Rehabilitation.',
+      'Celebrating the legacy and the journey of our final year in Medical Rehabilitation at OAU.',
     url: 'https://genie-clinicus.vercel.app',
     siteName: 'Genie Clinicus',
     images: [
       {
-        url: '/GClogo.jpeg',
+        url: GClogo.src, // Accessing the string URL
         width: 800,
         height: 800,
         alt: 'Genie Clinicus Official Logo',
@@ -58,14 +62,14 @@ export const metadata: Metadata = {
     card: 'summary_large_image',
     title: 'Genie Clinicus | FYB 2025',
     description: 'Celebrating the Grand Milestone of our Medical Journey.',
-    images: ['/GClogo.jpeg'],
+    images: [GClogo.src],
   },
 
   // Favicons
   icons: {
-    icon: '/GClogo.jpeg',
-    shortcut: '/GClogo.jpeg',
-    apple: '/GClogo.jpeg',
+    icon: GClogo.src,
+    shortcut: GClogo.src,
+    apple: GClogo.src,
   },
 }
 
