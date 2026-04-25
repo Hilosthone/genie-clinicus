@@ -3,6 +3,7 @@ export const NAV_LINKS = [
   { name: 'Home', href: '#' },
   { name: 'Events', href: '#events' },
   { name: 'Packages', href: '#packages' },
+  { name: 'Gallery', href: '#gallery' },
   { name: 'FAQ', href: '#faq' },
 ]
 
