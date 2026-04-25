@@ -148,8 +148,7 @@ export default function Footer() {
                 Privacy Policy
               </a>
               <a
-                href='$'
-                target='_blank'
+                href='#'
                 className='text-[9px] text-slate-700 hover:text-[#93A5D1] uppercase tracking-widest font-bold transition-colors'
               >
                 OAU Portal
