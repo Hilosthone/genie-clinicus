@@ -4,6 +4,7 @@ import Hero from '@/src/components/home/Hero'
 import Events from '@/src/components/home/Events'
 import Packages from '@/src/components/home/Packages'
 import CTA from '@/src/components/home/CTA'
+import Gallery from '@/src/components/home/Gallery'
 import FAQ from '@/src/components/home/FAQ'
 import Footer from '@/src/components/layout/Footer'
 
@@ -23,6 +24,8 @@ export default function Home() {
 
       {/* Packages: Investment Tiers for the Class of 2025 */}
       <Packages />
+
+      <Gallery />
 
       {/* FAQ: Clearing Doubts & Logistics */}
       <FAQ />
