@@ -24,21 +24,35 @@ export default function Navbar() {
     return () => window.removeEventListener('scroll', handleScroll)
   }, [])
 
+  // Optimized for speed: Fast pulse, short duration
+  const hoverVariants: Variants = {
+    initial: { scale: 1 },
+    autoHover: { 
+      scale: [1, 1.02, 1],
+      transition: { 
+        duration: 1.2, 
+        repeat: 1, 
+        ease: "easeOut" 
+      }
+    }
+  }
+
   const sidebarVariants: Variants = {
-    hidden: { x: '110%', skewY: 2 },
+    hidden: { x: '100%', opacity: 0.5 },
     visible: {
       x: 0,
-      skewY: 0,
+      opacity: 1,
       transition: {
         type: 'spring',
-        damping: 30,
-        stiffness: 150,
-        mass: 0.8,
+        damping: 25, // Snappier response
+        stiffness: 200,
+        mass: 0.6,
       },
     },
     exit: {
-      x: '110%',
-      transition: { ease: 'easeInOut', duration: 0.4 },
+      x: '100%',
+      opacity: 0,
+      transition: { ease: 'circIn', duration: 0.2 },
     },
   }
 
@@ -51,23 +65,26 @@ export default function Navbar() {
     <>
       <header className='fixed top-6 inset-x-0 z-[100] flex justify-center px-4'>
         <motion.nav
-          initial={{ y: -100, opacity: 0 }}
+          initial={{ y: -40, opacity: 0 }} // Reduced travel distance for faster arrival
           animate={{ y: 0, opacity: 1 }}
+          transition={{ duration: 0.4, ease: "easeOut" }} // Snappy entry
+          whileInView="autoHover"
+          variants={hoverVariants}
+          viewport={{ once: true }}
           className={cn(
-            'w-full max-w-6xl transition-all duration-700 ease-in-out',
+            'w-full max-w-6xl transition-all duration-500 ease-in-out',
             'flex justify-between items-center px-6 py-3 rounded-[2.5rem] border',
-            // When scrolled or open: Deeper blur, slightly more visible navy
             scrolled || isOpen
-              ? 'bg-[#0A0927]/40 backdrop-blur-2xl border-white/10 shadow-2xl shadow-black/50'
+              ? 'bg-[#0A0927]/60 backdrop-blur-3xl border-white/10 shadow-2xl shadow-black/50'
               : 'bg-white/[0.03] backdrop-blur-lg border-white/[0.08] shadow-none',
           )}
         >
-          {/* Logo Section - Links to Home/Top */}
+          {/* Logo Section */}
           <div
             onClick={scrollToTop}
             className='flex items-center gap-3 group cursor-pointer'
           >
-            <div className='relative w-11 h-11 rounded-full overflow-hidden border border-white/10 group-hover:border-[#D97706]/50 transition-all duration-500 bg-[#0A0927]'>
+            <div className='relative w-10 h-10 md:w-11 md:h-11 rounded-full overflow-hidden border border-white/10 group-hover:border-[#D97706]/50 transition-all duration-500 bg-[#0A0927]'>
               <Image
                 src={GClogo}
                 alt='Genie Clinicus Logo'
@@ -76,10 +93,10 @@ export default function Navbar() {
               />
             </div>
             <div className='flex flex-col'>
-              <span className='font-black text-white tracking-tighter text-lg leading-none group-hover:text-[#D97706] transition-colors'>
+              <span className='font-black text-white tracking-tighter text-base md:text-lg leading-none group-hover:text-[#D97706] transition-colors'>
                 GENIE CLINICUS
               </span>
-              <span className='text-[9px] text-[#93A5D1] font-bold tracking-[0.2em] uppercase leading-none mt-1 text-nowrap'>
+              <span className='text-[8px] md:text-[9px] text-[#93A5D1] font-bold tracking-[0.2em] uppercase leading-none mt-1'>
                 FYB 2025
               </span>
             </div>
@@ -102,22 +119,22 @@ export default function Navbar() {
           {/* Right Section */}
           <div className='flex items-center gap-4'>
             <div className='hidden md:flex'>
-              <motion.button
+              <motion.a
+                href="#packages"
                 whileHover={{ scale: 1.05 }}
                 whileTap={{ scale: 0.95 }}
-                className='flex items-center gap-2 bg-[#D97706] text-white px-6 py-2.5 rounded-full text-sm font-black transition-all shadow-lg shadow-orange-900/20'
+                className='flex items-center gap-2 bg-[#D97706] text-white px-6 py-2.5 rounded-full text-xs font-black transition-all shadow-lg shadow-orange-900/20'
               >
                 Secure Merch
-                <ArrowRight size={16} />
-              </motion.button>
+                <ArrowRight size={14} />
+              </motion.a>
             </div>
 
-            {/* Hamburger Toggle */}
             <button
-              className='lg:hidden p-3 text-white hover:bg-white/10 rounded-2xl transition-colors bg-white/5'
+              className='lg:hidden p-2.5 text-white hover:bg-white/10 rounded-2xl transition-colors bg-white/5'
               onClick={() => setIsOpen(true)}
             >
-              <Menu size={24} />
+              <Menu size={22} />
             </button>
           </div>
         </motion.nav>
@@ -127,12 +144,13 @@ export default function Navbar() {
       <AnimatePresence>
         {isOpen && (
           <>
+            {/* Lightened Backdrop: Switched from bg-black/85 to bg-black/30 */}
             <motion.div
               initial={{ opacity: 0 }}
               animate={{ opacity: 1 }}
               exit={{ opacity: 0 }}
               onClick={() => setIsOpen(false)}
-              className='fixed inset-0 bg-black/80 backdrop-blur-md z-[101]'
+              className='fixed inset-0 bg-black/30 backdrop-blur-sm z-[101]'
             />
 
             <motion.div
@@ -140,83 +158,70 @@ export default function Navbar() {
               initial='hidden'
               animate='visible'
               exit='exit'
-              className='fixed top-0 right-0 h-full w-[300px] sm:w-[400px] bg-[#0A0927]/95 backdrop-blur-2xl z-[102] p-10 flex flex-col shadow-[-40px_0_80px_rgba(0,0,0,0.7)] border-l border-white/10 rounded-l-[3.5rem]'
+              className='fixed top-0 right-0 h-full w-[260px] md:w-[320px] bg-[#0A0927]/95 backdrop-blur-3xl z-[102] p-8 flex flex-col shadow-[-10px_0_40px_rgba(0,0,0,0.3)] border-l border-white/10 rounded-l-[2.5rem]'
             >
               <button
                 onClick={() => setIsOpen(false)}
-                className='self-end p-3 rounded-full bg-white/5 hover:bg-white/10 text-white transition-all border border-white/5 mb-8'
+                className='self-end p-2.5 rounded-full bg-white/5 hover:bg-white/10 text-white transition-all border border-white/5 mb-6'
               >
-                <X size={20} />
+                <X size={18} />
               </button>
 
-              <div className='flex flex-col gap-10 h-full'>
+              <div className='flex flex-col gap-8 h-full'>
                 <div>
-                  <p className='text-[#D97706] text-[10px] font-black uppercase tracking-[0.5em] mb-8'>
-                    Navigation
+                  <p className='text-[#D97706] text-[9px] font-black uppercase tracking-[0.4em] mb-6'>
+                    Menu
                   </p>
 
-                  <div className='flex flex-col gap-2'>
+                  <div className='flex flex-col gap-1'>
                     {NAV_LINKS.map((link, i) => (
                       <motion.a
                         key={link.name}
-                        initial={{ x: 30, opacity: 0 }}
+                        initial={{ x: 15, opacity: 0 }}
                         animate={{ x: 0, opacity: 1 }}
-                        transition={{ delay: 0.1 + i * 0.05 }}
+                        transition={{ delay: i * 0.03 }} // Faster staggered reveal
                         href={link.href}
                         onClick={() => setIsOpen(false)}
-                        className='py-3 text-2xl font-bold text-white hover:text-[#D97706] transition-all flex items-center justify-between group'
+                        className='py-2.5 text-xl font-bold text-white hover:text-[#D97706] transition-all flex items-center justify-between group'
                       >
-                        <span className='group-hover:translate-x-2 transition-transform duration-300'>
+                        <span className='group-hover:translate-x-1 transition-transform'>
                           {link.name}
                         </span>
-                        <ArrowRight
-                          size={20}
-                          className='opacity-0 group-hover:opacity-100 group-hover:-translate-x-2 transition-all duration-300 text-[#D97706]'
-                        />
+                        <ArrowRight size={16} className='opacity-0 group-hover:opacity-100 text-[#D97706] -translate-x-2' />
                       </motion.a>
                     ))}
                   </div>
                 </div>
 
-                <div className='mt-auto space-y-8'>
-                  <div className='space-y-4'>
-                    <p className='text-[#93A5D1] text-[10px] font-black uppercase tracking-[0.5em]'>
-                      Official Packages
+                <div className='mt-auto space-y-6'>
+                  <div className='space-y-3'>
+                    <p className='text-[#93A5D1] text-[9px] font-black uppercase tracking-[0.4em]'>
+                      Payments
                     </p>
-                    <button className='w-full bg-white/5 border border-white/10 text-white py-5 rounded-[2rem] font-black text-sm flex items-center justify-center gap-3 hover:bg-[#D97706] hover:border-[#D97706] transition-all duration-500 group shadow-xl'>
-                      <ShieldCheck
-                        size={20}
-                        className='group-hover:rotate-12 transition-transform'
-                      />
-                      Get Your Merch
-                    </button>
+                    <a 
+                      href="#packages"
+                      onClick={() => setIsOpen(false)}
+                      className='w-full bg-[#D97706] text-white py-4 rounded-2xl font-black text-xs flex items-center justify-center gap-2 hover:brightness-110 transition-all shadow-xl'
+                    >
+                      <ShieldCheck size={18} />
+                      Secure Merch
+                    </a>
                   </div>
 
-                  <div className='flex items-center gap-4 text-slate-500'>
-                    <a
-                      href='https://instagram.com'
-                      target='_blank'
-                      className='p-3 bg-white/5 rounded-full hover:text-[#D97706] transition-colors'
-                    >
-                      <FaInstagram size={18} />
+                  <div className='flex items-center gap-3'>
+                    <a href='#' className='p-2.5 bg-white/5 rounded-full text-slate-400 hover:text-[#D97706] transition-colors'>
+                      <FaInstagram size={16} />
                     </a>
-                    <a
-                      href='https://wa.me/yournumber'
-                      target='_blank'
-                      className='p-3 bg-white/5 rounded-full hover:text-[#25D366] transition-colors'
-                    >
-                      <FaWhatsapp size={18} />
+                    <a href='#' className='p-2.5 bg-white/5 rounded-full text-slate-400 hover:text-[#25D366] transition-colors'>
+                      <FaWhatsapp size={16} />
                     </a>
                     <div className='h-[1px] flex-grow bg-white/5'></div>
                   </div>
 
-                  <div className='text-left opacity-30'>
-                    <h3 className='text-white font-black text-sm tracking-tighter'>
-                      GENIE CLINICUS
+                  <div className='pb-4'>
+                    <h3 className='text-white font-black text-xs tracking-tighter opacity-40'>
+                      GENIE CLINICUS 2025
                     </h3>
-                    <p className='text-[8px] text-white/80 uppercase tracking-[0.4em] font-bold mt-1'>
-                      FYB Committee • 2025
-                    </p>
                   </div>
                 </div>
               </div>
