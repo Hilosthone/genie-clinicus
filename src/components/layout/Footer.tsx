@@ -148,7 +148,7 @@ export default function Footer() {
                 Privacy Policy
               </a>
               <a
-                href='https://eportal.oauife.edu.ng/'
+                href='$'
                 target='_blank'
                 className='text-[9px] text-slate-700 hover:text-[#93A5D1] uppercase tracking-widest font-bold transition-colors'
               >
