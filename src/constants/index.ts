@@ -12,16 +12,16 @@ export const NAV_LINKS = [
 export const EVENTS = [
   {
     title: "Class Photoshoot",
-    date: "TBA",
+    date: "May 16, 2026", 
     time: "8:00 AM",
-    location: "Campus Precincts",
+    location: "COHS",
     description: "Clean fits, clean shots, and lifetime memories. We're starting the celebration strong.",
     type: "Memories",
     color: "#93A5D1"
   },
   {
     title: "Fitness Walk & Mountaineering",
-    date: "TBA",
+    date: "May 17, 2026",
     time: "6:30 AM",
     location: "Sobi Hill / Mountain Trail",
     description: "Fresh air and team energy. Pushing limits together and taking in the view.",
