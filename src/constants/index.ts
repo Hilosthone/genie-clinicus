@@ -21,10 +21,10 @@ export const EVENTS = [
     color: '#93A5D1',
   },
   {
-    title: 'Fitness Walk & Mountaineering',
-    date: 'May 17, 2026',
-    time: '6:30 AM',
-    location: 'Sobi Hill / Mountain Trail',
+    title: 'Fitness Walk',
+    date: 'July 18, 2026',
+    time: '7:00 AM',
+    location: 'Convergence Point / COHS Car Park',
     description:
       'Fresh air and team energy. Pushing limits together and taking in the view.',
     type: 'Wellness',
