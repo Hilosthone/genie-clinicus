@@ -26,7 +26,7 @@ export const EVENTS = [
     time: '7:00 AM',
     location: 'Convergence Point / COHS Car Park',
     description:
-      'Fresh air and team energy. Pushing limits together and taking in the view.',
+      'Fresh air and team energy. Aerobics, road jams, games and more !!!',
     type: 'Wellness',
     color: '#D97706',
   },
