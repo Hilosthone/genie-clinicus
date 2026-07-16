@@ -22,7 +22,7 @@ export const EVENTS = [
   },
   {
     title: 'Fitness Walk',
-    date: 'July 18, 2026',
+    date: 'Saturday, July 18, 2026',
     time: '7:00 AM',
     location: 'Convergence Point / COHS Car Park',
     description:
@@ -31,14 +31,14 @@ export const EVENTS = [
     color: '#D97706',
   },
   {
-    title: 'Amala Day',
-    date: 'TBA',
-    time: '2:00 PM',
-    location: 'Cultural Center',
+    title: 'From Clinic to Global Practice',
+    date: 'Wed. 22nd of July, 2026',
+    time: '10:00 AM',
+    location: 'HSLT A',
     description:
-      'Proper cultural enjoyment. Good food, heavy vibes, and class bonding over local delicacies.',
-    type: 'Social',
-    color: '#D97706',
+      'Theme: Rehabilitation without Borders: Pathways, Innovations, and Global Opportunities. Featuring Guest Speaker Dr. Olufisayo Aloba (PT, DPT, PhD), international career coach and mentor on US/Canada pathways.',
+    type: 'Academic',
+    color: '#0EA5E9',
   },
   {
     title: 'Outreach & Community Service',
