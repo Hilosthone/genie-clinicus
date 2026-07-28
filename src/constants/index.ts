@@ -41,14 +41,14 @@ export const EVENTS = [
     color: '#0EA5E9',
   },
   {
-    title: 'Outreach & Community Service',
-    date: 'TBA',
-    time: '10:00 AM',
-    location: 'Junior College Wings',
+    title: 'Amala Day',
+    date: 'Fri. 7th of August, 2026',
+    time: 'TBC',
+    location: 'TBC',
     description:
-      'Giving back and sharing love. Mentorship and impact for our junior colleagues.',
-    type: 'Impact',
-    color: '#93A5D1',
+      'A day of pure enjoyment and bonding. Amala, ewedu, gbegiri, and all the other swallows you can think of.',
+    type: 'Cultural',
+    color: '#D97706',
   },
   {
     title: 'Cardio Fest',
